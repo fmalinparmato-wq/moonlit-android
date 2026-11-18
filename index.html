@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Barito Nagari News — Dari Nagari Untuk Nagari</title>
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#b92532">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.577.0/dist/umd/lucide.min.js"></script>
+  <style>
+    :root{--red:#b92532;--dark:#25232b;--muted:#77747a;--line:#eee9e7;--bg:#f8f6f3}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body,button,input{font-family:"Nunito",sans-serif}body{margin:0;background:#eae5df;color:var(--dark)}
+    button{cursor:pointer}button:focus-visible,input:focus-visible,a:focus-visible{outline:3px solid #e8a536;outline-offset:2px}button:disabled{opacity:.55;cursor:wait}
+    .stage{min-height:100vh;display:flex;align-items:center;justify-content:center;gap:60px;padding:30px}.intro{max-width:360px}.eyebrow{color:var(--red);font-size:12px;font-weight:900;letter-spacing:.18em;text-transform:uppercase}.intro h1{font-size:clamp(40px,5vw,66px);line-height:1.05;letter-spacing:-.055em;margin:14px 0}.intro h1 span{color:var(--red)}.intro p{line-height:1.65;color:#716b69;font-size:17px}.intro .hint{display:flex;align-items:center;gap:8px;color:var(--red);font-size:13px;font-weight:800;margin-top:24px}
+    .phone{width:390px;max-width:100%;height:min(790px,calc(100vh - 40px));min-height:590px;flex:none;background:white;border:8px solid #252227;border-radius:43px;overflow:hidden;box-shadow:0 28px 60px #3b282a36;position:relative}.phone:before{content:"";position:absolute;top:8px;left:50%;transform:translateX(-50%);width:94px;height:23px;background:#252227;border-radius:20px;z-index:5}.screen{height:100%;display:flex;flex-direction:column;background:var(--bg)}.status{height:42px;padding:13px 24px 0;display:flex;justify-content:space-between;font-size:11px;font-weight:900;flex:none;background:white}.status-icons{display:flex;gap:5px}.status-icons svg{width:12px;height:12px}
+    .app-header{background:white;padding:5px 17px 13px;box-shadow:0 3px 14px #39221a0a;flex:none;z-index:2}.topbar{display:flex;align-items:center;justify-content:space-between;gap:10px}.brand{display:flex;align-items:center;gap:9px}.brand-mark{width:34px;height:34px;border-radius:10px;background:var(--red);color:white;display:grid;place-items:center}.brand-mark svg{width:21px;height:21px}.brand-name{font-weight:900;font-size:18px;line-height:1;letter-spacing:-.04em}.brand-name span{color:var(--red)}.brand-caption{display:block;color:var(--muted);font-size:8px;font-weight:800;letter-spacing:.06em;margin-top:3px}.icon-button{border:0;background:#f8f3f1;border-radius:12px;width:34px;height:34px;display:grid;place-items:center;color:var(--red)}.icon-button svg{width:18px;height:18px}.search-box{display:flex;align-items:center;gap:9px;border:1px solid var(--line);background:#f8f7f5;border-radius:12px;padding:9px 11px;margin-top:13px;color:#918a87}.search-box svg{width:17px;height:17px}.search-box input{width:100%;border:0;outline:0;background:transparent;font-size:12px;color:var(--dark)}
+    .content{flex:1;overflow-y:auto;padding:17px 15px 28px;scrollbar-width:thin}.date-line{font-size:10px;color:var(--muted);font-weight:800;letter-spacing:.06em;text-transform:uppercase}.welcome-title{font-size:22px;line-height:1.2;margin:5px 0 15px;font-weight:900}.welcome-title span{color:var(--red)}.section-title{display:flex;align-items:center;justify-content:space-between;margin:21px 1px 10px}.section-title h2{font-size:15px;margin:0;font-weight:900}.text-action{border:0;background:transparent;color:var(--red);font-size:11px;font-weight:900}
+    .hero{position:relative;width:100%;height:232px;border:0;border-radius:18px;overflow:hidden;text-align:left;color:white;background:#49352f;padding:0;display:block}.hero img{width:100%;height:100%;object-fit:cover;display:block}.hero:after{content:"";position:absolute;inset:0;background:linear-gradient(transparent 22%,#1a1719df 100%)}.hero-copy{position:absolute;bottom:17px;left:16px;right:16px;z-index:1}.tag{display:inline-block;border-radius:5px;background:var(--red);color:white;padding:4px 7px;font-size:9px;font-weight:900;text-transform:uppercase;letter-spacing:.04em}.hero h2{font-size:19px;line-height:1.24;margin:9px 0 6px;font-weight:900}.hero small{font-size:10px;color:#eee}
+    .chips{display:flex;gap:7px;overflow-x:auto;padding:2px 0 8px;scrollbar-width:none}.chips::-webkit-scrollbar{display:none}.chip{flex:none;background:white;border:1px solid #e8e1dc;border-radius:25px;padding:8px 13px;color:#5b5554;font-size:11px;font-weight:800}.chip.active{background:var(--red);border-color:var(--red);color:white}
+    .article{display:flex;gap:12px;background:white;border:1px solid var(--line);border-radius:15px;padding:9px;margin:9px 0;box-shadow:0 3px 10px #38201907}.article-image{border:0;background:none;padding:0;flex:none}.article img{width:96px;height:94px;object-fit:cover;border-radius:10px;display:block}.article-info{min-width:0;flex:1;display:flex;flex-direction:column;align-items:flex-start}.article-category{font-size:9px;color:var(--red);font-weight:900;text-transform:uppercase}.article-title{border:0;background:none;padding:2px 0;text-align:left;color:var(--dark);font-size:12px;line-height:1.3;font-weight:900;display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}.article-bottom{display:flex;align-items:center;justify-content:space-between;width:100%;margin-top:auto}.article-bottom small{font-size:9px;color:var(--muted)}.save-button{border:0;background:#f9f2f0;color:var(--red);border-radius:8px;width:27px;height:27px;display:grid;place-items:center}.save-button svg{width:15px;height:15px}.save-button.saved svg{fill:var(--red)}
+    .view-title{font-size:23px;margin:3px 0 4px;font-weight:900}.view-sub{font-size:11px;color:var(--muted);margin:0 0 17px;line-height:1.5}.empty{border:1px dashed #dfceca;border-radius:16px;background:white;text-align:center;padding:34px 19px;color:var(--muted);font-size:12px;line-height:1.6}.empty svg{width:32px;height:32px;display:block;margin:0 auto 10px;color:var(--red)}.notice{font-size:10px;color:#8a7069;background:#f5eae5;padding:9px 11px;border-radius:9px;line-height:1.5;margin:13px 0}
+    .detail-back{border:0;background:none;color:var(--red);display:flex;align-items:center;gap:5px;font-size:11px;font-weight:900;padding:0 0 13px}.detail-back svg{width:17px}.detail-hero{width:100%;height:205px;object-fit:cover;border-radius:15px}.detail-meta{display:flex;align-items:center;gap:8px;margin:15px 0 8px;font-size:10px;color:var(--muted)}.detail-title{font-size:23px;line-height:1.2;margin:0 0 10px}.detail-lead{font-size:13px;font-weight:800;line-height:1.6}.detail-body{font-size:12px;line-height:1.8;color:#565153}.detail-actions{display:flex;gap:9px;margin:18px 0}.detail-save{border:1px solid var(--red);border-radius:10px;background:white;color:var(--red);padding:10px 13px;font-size:11px;font-weight:900;display:flex;align-items:center;gap:6px}.detail-save svg{width:15px}.source-link{color:var(--red);font-weight:900;font-size:11px}
+    .nav{display:grid;grid-template-columns:repeat(4,1fr);padding:9px 3px 14px;background:white;border-top:1px solid var(--line);flex:none}.nav button{border:0;background:none;color:#8b8583;display:flex;align-items:center;flex-direction:column;gap:3px;font-size:10px;font-weight:800}.nav button svg{width:19px;height:19px}.nav button.active{color:var(--red)}.toast{position:absolute;bottom:72px;left:50%;transform:translateX(-50%);z-index:8;background:#2d2526;color:white;padding:10px 13px;border-radius:10px;font-size:11px;font-weight:800;max-width:85%;text-align:center;box-shadow:0 7px 20px #0003}
+    [hidden]{display:none!important}@media(max-width:800px){.stage{padding:0;display:block}.intro{display:none}.phone{width:100%;max-width:none;height:100dvh;min-height:550px;border:0;border-radius:0;box-shadow:none}.phone:before{display:none}}
+  </style>
+</head>
+<body>
+  <main class="stage">
+   <aside class="intro">
+    <div class="eyebrow">Portal berita lokal</div>
+    <h1>Dari nagari,<br><span>untuk nagari.</span></h1>
+    <p>Jelajahi cerita dari nagari, daerah, dan masyarakat dalam pengalaman membaca yang nyaman.</p>
+    <div class="hint"><i data-lucide="newspaper"></i> Barito Nagari News di layar sebelah</div>
+   </aside>
+   <div class="phone" aria-label="Aplikasi Barito Nagari News">
+    <div class="screen">
+     <div class="status"><span>9:41</span><span class="status-icons"><i data-lucide="signal"></i><i data-lucide="wifi"></i><i data-lucide="battery-full"></i></span></div>
+     <header class="app-header">
+      <div class="topbar">
+       <div class="brand">
+        <span class="brand-mark"><i data-lucide="newspaper"></i></span>
+        <div>
+         <div class="brand-name">Barito <span>Nagari</span></div>
+         <span class="brand-caption">BARITONAGARINEWS.COM · DARI NAGARI UNTUK NAGARI</span>
+        </div>
+       </div><button id="search-shortcut" class="icon-button" type="button" aria-label="Buka pencarian"><i data-lucide="search"></i></button>
+      </div><label class="search-box" for="search-input"><i data-lucide="search"></i><input id="search-input" type="search" placeholder="Cari berita, topik, atau kategori..." autocomplete="off"></label>
+     </header>
+     <div id="content" class="content" aria-live="polite"></div>
+     <nav id="bottom-nav" class="nav" aria-label="Navigasi utama"><button type="button" data-tab="beranda" class="active"><i data-lucide="house"></i>Beranda</button> <button type="button" data-tab="kategori"><i data-lucide="layout-grid"></i>Kategori</button> <button type="button" data-tab="tersimpan"><i data-lucide="bookmark"></i>Tersimpan</button> <button type="button" data-tab="tentang"><i data-lucide="info"></i>Tentang</button></nav>
+    </div>
+    <div id="toast" class="toast" role="status" hidden></div>
+   </div>
+  </main>
+  <script>
+  const articles=[
+    {id:1,category:"Nagari",title:"Gotong Royong Warga Jadi Penggerak Pembangunan Nagari",summary:"Kebersamaan masyarakat menjadi bagian penting dalam merawat fasilitas dan ruang bersama di nagari.",body:"Di berbagai nagari, kegiatan gotong royong terus menjadi cara warga menjaga lingkungan sekaligus mempererat hubungan antartetangga. Partisipasi masyarakat dapat membantu merawat jalan lingkungan, saluran air, dan fasilitas umum. Kolaborasi antara warga dan pemerintah nagari menjadi kunci agar kebutuhan setempat dapat ditangani secara berkelanjutan.",time:"Konten contoh · 4 menit baca",image:"https://images.pexels.com/photos/34241021/pexels-photo-34241021.jpeg",alt:"Pemandangan nagari Minangkabau dengan sawah hijau dan gunung di Sumatera Barat."},
+    {id:2,category:"Daerah",title:"Pasar Tradisional Tetap Menjadi Ruang Penting Ekonomi Warga",summary:"Pedagang dan pembeli menghidupkan aktivitas ekonomi harian di pasar tradisional.",body:"Pasar tradisional memiliki peran lebih dari sekadar tempat bertransaksi. Di sana, pelaku usaha kecil bertemu pelanggan dan membangun jaringan sosial yang dekat. Dukungan terhadap kebersihan, kenyamanan, dan akses pasar dapat membantu kegiatan ekonomi masyarakat tumbuh.",time:"Konten contoh · 3 menit baca",image:"https://images.pexels.com/photos/4454063/pexels-photo-4454063.jpeg",alt:"Pedagang di pasar tradisional Indonesia."},
+    {id:3,category:"Pendidikan",title:"Semangat Belajar di Kelas Membuka Peluang Generasi Muda",summary:"Lingkungan belajar yang mendukung membantu siswa berkembang dan berani mencoba hal baru.",body:"Pendidikan yang dekat dengan kebutuhan siswa dapat menumbuhkan rasa ingin tahu dan kepercayaan diri. Peran guru, keluarga, serta lingkungan sekolah sama-sama penting untuk menciptakan pengalaman belajar yang aman dan menyenangkan.",time:"Konten contoh · 3 menit baca",image:"https://images.pexels.com/photos/31940733/pexels-photo-31940733.jpeg",alt:"Siswa di kelas di Indonesia."},
+    {id:4,category:"Budaya",title:"Warisan Budaya Minangkabau Terus Hidup di Tengah Masyarakat",summary:"Ruang budaya dan tradisi lokal menjadi penghubung antargenerasi.",body:"Warisan budaya hidup melalui praktik sehari-hari, cerita keluarga, seni, dan kegiatan komunitas. Upaya mengenalkan nilai-nilai lokal kepada generasi muda membantu menjaga identitas masyarakat sekaligus membuka ruang dialog dengan perubahan zaman.",time:"Konten contoh · 4 menit baca",image:"https://images.pexels.com/photos/34241020/pexels-photo-34241020.jpeg",alt:"Nagari Minangkabau dari udara."},
+    {id:5,category:"Religi",title:"Kegiatan Komunitas Mempererat Silaturahmi Masyarakat",summary:"Pertemuan warga menjadi kesempatan untuk saling mendukung dan berbagi gagasan.",body:"Kegiatan komunitas memberi kesempatan bagi warga untuk bertemu, berdiskusi, dan membangun kerja sama. Semangat saling membantu dapat menjadi landasan bagi lingkungan yang lebih peduli dan inklusif.",time:"Konten contoh · 2 menit baca",image:"https://images.pexels.com/photos/34241064/pexels-photo-34241064.jpeg",alt:"Masjid Raya Sumatera Barat."}
+  ];
+  const categories=["Semua","Nagari","Daerah","Pendidikan","Budaya","Religi"];
+  let tab="beranda",category="Semua",query="",detailId=null;
+  let backendRecords=JSON.parse(localStorage.getItem('barito_saved')||'[]');
+  let dataReady=true, toastTimer;
+  const content=document.getElementById("content");
+  const icons=()=>lucide.createIcons();
+  function toast(message){const el=document.getElementById("toast");el.textContent=message;el.hidden=false;clearTimeout(toastTimer);toastTimer=setTimeout(()=>el.hidden=true,2800)}
+  const savedRecord=id=>backendRecords.find(r=>Number(r.article_id)===id);
+  function saveToStorage(){localStorage.setItem('barito_saved',JSON.stringify(backendRecords))}
+  function chips(){return `<div class="chips" aria-label="Kategori berita">${categories.map(c=>`<button class="chip ${category===c?"active":""}" type="button" data-category="${c}" aria-pressed="${category===c}">${c}</button>`).join("")}</div>`}
+  function list(items){return items.length?`<div>${items.map(a=>`<article class="article"><button type="button" class="article-image" data-open="${a.id}" aria-label="Baca ${a.title}"><img src="${a.image}" alt="${a.alt}" loading="lazy"></button><div class="article-info"><span class="article-category">${a.category}</span><button type="button" class="article-title" data-open="${a.id}">${a.title}</button><div class="article-bottom"><small>${a.time}</small><button type="button" class="save-button ${savedRecord(a.id)?"saved":""}" data-save="${a.id}" aria-label="Simpan: ${a.title}"><i data-lucide="bookmark"></i></button></div></div></article>`).join("")}</div>`:`<div class="empty"><i data-lucide="search-x"></i>Tidak ada berita yang cocok.<br>Coba kata kunci atau kategori lain.</div>`}
+  function filtered(){return articles.filter(a=>(category==="Semua"||a.category===category)&&(`${a.title} ${a.summary} ${a.category}`.toLowerCase().includes(query.toLowerCase())))}
+  function render(){
+    document.querySelectorAll("#bottom-nav button").forEach(b=>b.classList.toggle("active",b.dataset.tab===tab));
+    if(detailId!==null){
+      const a=articles.find(x=>x.id===detailId);if(!a){detailId=null;return render()}
+      content.innerHTML=`<button type="button" class="detail-back" data-back="true"><i data-lucide="arrow-left"></i> Kembali ke berita</button><img class="detail-hero" src="${a.image}" alt="${a.alt}" loading="lazy"><div class="detail-meta"><span class="tag">${a.category}</span><span>${a.time}</span></div><h1 class="detail-title">${a.title}</h1><p class="detail-lead">${a.summary}</p><div class="detail-body"><p>${a.body}</p></div><div class="detail-actions"><button type="button" class="detail-save" data-save="${a.id}"><i data-lucide="bookmark"></i>${savedRecord(a.id)?"Hapus dari Tersimpan":"Simpan Berita"}</button></div><p class="notice">Ini adalah artikel contoh untuk pratinjau aplikasi, bukan berita terkini.</p>`;
+    }else if(tab==="beranda"){
+      const items=filtered();
+      content.innerHTML=`<div class="date-line">Berita lokal · Indonesia</div><h1 class="welcome-title">Dari nagari <span>untuk nagari.</span></h1>${!query&&category==="Semua"?`<button type="button" class="hero" data-open="1"><img src="${articles[0].image}" alt="${articles[0].alt}" loading="lazy"><div class="hero-copy"><span class="tag">Berita utama · Contoh</span><h2>${articles[0].title}</h2><small>${articles[0].time}</small></div></button>`:""}<div class="section-title"><h2>Kategori Berita</h2><button type="button" class="text-action" data-go="kategori">Lihat semua ›</button></div>${chips()}<div class="section-title"><h2>${query?"Hasil Pencarian":"Berita Terbaru"}</h2><span class="date-line">${items.length} artikel</span></div>${list(items)}<p class="notice">Artikel yang tampil adalah konten contoh dan mudah diganti dengan berita redaksi.</p>`;
+    }else if(tab==="kategori"){
+      content.innerHTML=`<h1 class="view-title">Kategori Berita</h1><p class="view-sub">Pilih topik yang ingin Anda baca.</p>${chips()}<div class="section-title"><h2>${category==="Semua"?"Semua Berita":category}</h2><span class="date-line">${filtered().length} artikel</span></div>${list(filtered())}`;
+    }else if(tab==="tersimpan"){
+      content.innerHTML=`<h1 class="view-title">Berita Tersimpan</h1><p class="view-sub">Baca kembali artikel yang menarik perhatian Anda.</p>${backendRecords.length?list(articles.filter(a=>savedRecord(a.id))):`<div class="empty"><i data-lucide="bookmark"></i>Belum ada berita tersimpan.<br>Ketuk ikon penanda pada artikel untuk menyimpannya.</div>`}`;
+    }else{
+      content.innerHTML=`<h1 class="view-title">Tentang Portal</h1><p class="view-sub">Berita dan cerita dari dekat untuk pembaca Indonesia.</p><div class="empty"><i data-lucide="newspaper"></i><strong>Barito Nagari News</strong><br>Baritonagarinews.com<br>Dari nagari untuk nagari.</div><p class="notice">Tampilan ini adalah pratinjau aplikasi. Artikel di dalamnya merupakan contoh, bukan umpan berita langsung.</p><a class="source-link" href="https://www.baritonagarinews.com/?m=1" target="_blank" rel="noopener noreferrer">Kunjungi situs Barito Nagari News ↗</a>`;
+    }
+    icons();
+  }
+  function toggleSave(id){
+    const record=savedRecord(id);
+    if(record){backendRecords=backendRecords.filter(r=>Number(r.article_id)!==id);toast("Berita dihapus dari simpanan")}
+    else{backendRecords.push({article_id:id,saved_at:new Date().toISOString()});toast("Berita berhasil disimpan")}
+    saveToStorage();render();
+  }
+  document.getElementById("bottom-nav").addEventListener("click",e=>{const b=e.target.closest("[data-tab]");if(!b)return;tab=b.dataset.tab;detailId=null;render();content.scrollTop=0});
+  document.getElementById("search-input").addEventListener("input",e=>{query=e.target.value;tab="beranda";detailId=null;render();content.scrollTop=0});
+  document.getElementById("search-shortcut").onclick=()=>{tab="beranda";detailId=null;render();document.getElementById("search-input").focus()};
+  content.addEventListener("click",e=>{
+    const b=e.target.closest("button");if(!b)return;
+    if(b.dataset.category){category=b.dataset.category;detailId=null;render();content.scrollTop=0}
+    else if(b.dataset.open){detailId=Number(b.dataset.open);render();content.scrollTop=0}
+    else if(b.dataset.back){detailId=null;render();content.scrollTop=0}
+    else if(b.dataset.go){tab=b.dataset.go;detailId=null;render();content.scrollTop=0}
+    else if(b.dataset.save){toggleSave(Number(b.dataset.save))}
+  });
+  if('serviceWorker' in navigator){navigator.serviceWorker.register('sw.js').catch(()=>{})}
+  render();
+  </script>
+</body>
+</html>
